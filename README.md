@@ -1,5 +1,4 @@
-# Simple-calculator-language
-Simple calculator on antlr4 and java
+# Теоретическая информатика. Парсинг (парсер-генераторы)
 
-It evaluates and runs.
-Really nice experience creating things with this library.
+Лоскутова Мария, Б09 
+
