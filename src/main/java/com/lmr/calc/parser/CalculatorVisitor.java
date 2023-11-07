@@ -1,5 +1,5 @@
 // Generated from Calculator.g4 by ANTLR 4.7.2
-package com.liguoliang.calc.parser;
+package com.lmr.calc.parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

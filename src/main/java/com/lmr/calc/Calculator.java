@@ -1,7 +1,7 @@
-package com.liguoliang.calc;
+package com.lmr.calc;
 
-import com.liguoliang.calc.parser.CalculatorLexer;
-import com.liguoliang.calc.parser.CalculatorParser;
+import com.lmr.calc.parser.CalculatorLexer;
+import com.lmr.calc.parser.CalculatorParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;

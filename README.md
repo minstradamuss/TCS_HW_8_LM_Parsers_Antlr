@@ -1,10 +1,14 @@
 # Homework.Parsers.LM
 
-**How to use?**
- - `CalculatorTest` shows how to use it. 
- - `Calculator` has a main method
+**Как пользоваться?**
+ - `CalculatorTest` - тесты
+ - `Calculator` - main method
 
-to generate java code:
+(нужно загрузить как maven project, и потом, возможно это всё-таки работает:
+рядом с CalculatorTest и Calculator есть зеленые стрелочки и при нажатии на них
+все автоматически запускается)
+
+Собрать:
 ```
-antlr4 -no-listener -visitor Calculator.g4 -o ../java/com/liguoliang/calc/parser -package com.liguoliang.calc.parser
+antlr4 -no-listener -visitor Calculator.g4 -o ../java/com/liguoliang/calc/parser -package com.lmr.calc.parser
 ```

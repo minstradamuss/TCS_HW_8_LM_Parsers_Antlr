@@ -1,7 +1,7 @@
-package com.liguoliang.calc;
+package com.lmr.calc;
 
-import com.liguoliang.calc.parser.CalculatorBaseVisitor;
-import com.liguoliang.calc.parser.CalculatorParser;
+import com.lmr.calc.parser.CalculatorBaseVisitor;
+import com.lmr.calc.parser.CalculatorParser;
 
 public class CalculatorVisitor extends CalculatorBaseVisitor<Integer> {
 

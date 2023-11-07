@@ -1,4 +1,4 @@
-package com.liguoliang.calc;
+package com.lmr.calc;
 
 import org.junit.Before;
 import org.junit.Test;
