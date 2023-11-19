@@ -1,0 +1,11 @@
+EQQ=1
+OPERATION=2
+OPEN=3
+CLOSE=4
+ID=5
+INT=6
+EQUAL=7
+';'=1
+'('=3
+')'=4
+'='=7
