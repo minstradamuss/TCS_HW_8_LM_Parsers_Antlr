@@ -2,34 +2,39 @@ package lmr.example
 
 import CalcgramLexer
 import CalcgramParser
-import org.antlr.v4.runtime.CharStream
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.antlr.v4.runtime.tree.ParseTreeWalker
 import java.io.Serializable
 
-
+val vals = mutableMapOf<String, Operand>()
 class CalcgramParser {
-
-    private val values: MutableMap<String, Operand> = mutableMapOf()
     fun parse(raw: String): Serializable {
-        val listener = CalcgramParserListener(values)
-        val er = "Can't parse"
+        val listener = CalcgramParserListener(vals)
 
-        if (raw.indexOf(';') != raw.length - 1 || !listener.correct) {
-            return er
+        if (!isValidInput(raw, listener)) {
+            return "Can't parse"
         }
 
         try {
-            ParseTreeWalker().walk(listener, CalcgramParser(CommonTokenStream(CalcgramLexer(CharStreams.fromString(raw)))).s())
-        } catch (e : Exception) {
+            val parser = CalcgramParser(CommonTokenStream(CalcgramLexer(CharStreams.fromString(raw))))
+            ParseTreeWalker().walk(listener, parser.s())
+        } catch (e: Exception) {
             return e
+        } finally {
+            return formatResult(raw, listener)
         }
+    }
 
+    private fun isValidInput(raw: String, listener: CalcgramParserListener): Boolean {
+        return raw.endsWith(';') && listener.correct
+    }
+
+    private fun formatResult(raw: String, listener: CalcgramParserListener): String {
         return if (listener.setId == null) {
-            "${raw.slice(0..<raw.length - 1)}=${listener};"
+            "${raw.substring(0, raw.length - 1)}=${listener};"
         } else {
-            "${listener.setId}=${values[listener.setId]?.getValue()};"
+            "${listener.setId}=${vals[listener.setId]?.getValue()};"
         }
     }
 }

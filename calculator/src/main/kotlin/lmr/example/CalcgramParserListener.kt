@@ -4,66 +4,97 @@ import CalcgramParser
 import org.antlr.v4.runtime.tree.ErrorNode
 import java.util.*
 
-class Operand private constructor (
-    val leftSummand : Int,
-    val rightSummand : Int,
-    val isSum : Boolean) {
-
-    fun getValue() = leftSummand + rightSummand
+class Operand private constructor (val leftS : Int, val rightS : Int, val isSum : Boolean) {
+    fun getValue() = leftS + rightS
     companion object {
-        fun sum(leftSummand: Int, rightSummand: Int) = Operand(leftSummand, rightSummand, true)
-
-        fun value(value: Int) = Operand(value, 0, false)
+        fun sum(leftS: Int, rightS: Int) = Operand(leftS, rightS, true)
+        fun `val`(value: Int) = Operand(value, 0, false)
     }
 }
 
-class  CalcgramParserListener(
-    val getValue: MutableMap<String, Operand> = mutableMapOf()
-) : CalcgramBaseListener() {
-    var setId: String? = null
-        private set
-    private val valuesStack = Stack<Operand>()
-    var correct = true
-        private set
-    private var eCount = 0
+class  CalcgramParserListener( val getValue: MutableMap<String, Operand> = mutableMapOf()) : CalcgramBaseListener() {
+    private var _setId: String? = null
+    var setId: String?
+        get() = _setId
+        private set(value) {
+            _setId = value
+        }
+
+
+    val valStack = Stack<Operand>()
+    private var _correct = true
+    var correct: Boolean
+        get() = _correct
+        private set(value) {
+            _correct = value
+        }
+
+
+    private var _cnt = 0
+    var eCnt: Int
+        get() = _cnt
+        private set(value) {
+            _cnt = value
+        }
+
+
     override fun enterS(ctx: CalcgramParser.SContext?) {
         setId = null
         correct = true
-        eCount = 0
-        valuesStack.clear()
+        eCnt = 0
     }
 
     override fun enterE(ctx: CalcgramParser.EContext?) {
-        eCount++
+        eCnt++
+    }
+
+    private fun shouldExit(ctx: CalcgramParser.EContext?): Boolean {
+        if (ctx == null || !correct) {
+            correct = false
+            return true
+        }
+        return false
     }
 
     override fun exitE(ctx: CalcgramParser.EContext?) {
-        if (ctx == null || !correct) {
-            correct = false
+        eCnt--
+        if (shouldExit(ctx)) {
             return
         }
-        eCount--
-        if (ctx.operation() != null) {
-            val operation = ctx.operation().OPERATION().toString()
-            val right = valuesStack.pop()
-            val left = valuesStack.pop()
-            valuesStack.push(
-                if (operation == "+") Operand.sum(left.getValue(), right.getValue())
-                else Operand.sum(left.getValue() * (if (right.isSum) right.leftSummand else right.getValue()), if (right.isSum) right.rightSummand else 0)
-            )
-        } else {
-            valuesStack.push(Operand.value(valuesStack.pop().getValue()))
+        if (ctx != null) {
+            if (ctx.operation() != null) {
+                processOperation(ctx.operation())
+            } else {
+                processNonOperation()
+            }
         }
     }
 
+    private fun processOperation(operationCtx: CalcgramParser.OperationContext) {
+        val operation = operationCtx.OPERATION().toString()
+        val right = valStack.pop()
+        val left = valStack.pop()
+
+        valStack.push(
+            if (operation == "+") Operand.sum(left.getValue(), right.getValue())
+            else Operand.sum(
+                left.getValue() * (if (right.isSum) right.leftS else right.getValue()),
+                if (right.isSum) right.rightS else 0
+            )
+        )
+    }
+
+    private fun processNonOperation() {
+        valStack.push(Operand.`val`(getValStackValue()))
+    }
 
     override fun exitA(ctx: CalcgramParser.AContext?) {
         if (ctx == null || !correct) {
             correct = false
             return
         }
-        val value = valuesStack.pop().getValue()
-        getValue[setId.toString()] = Operand.value(value)
+        val value = getValStackValue()
+        getValue[setId.toString()] = Operand.`val`(value)
     }
 
     override fun exitId(ctx: CalcgramParser.IdContext?) {
@@ -72,7 +103,7 @@ class  CalcgramParserListener(
             return
         }
         val currId = ctx.ID().toString()
-        if (eCount > 0) getValue[currId]?.let { valuesStack.push(it) } ?: run { correct = false }
+        if (eCnt > 0) getValue[currId]?.let { valStack.push(it) } ?: run { correct = false }
         else setId = currId
     }
 
@@ -81,13 +112,23 @@ class  CalcgramParserListener(
             correct = false
             return
         }
-        valuesStack.push(Operand.value(ctx.INT().toString().toInt()))
+        valStack.push(Operand.`val`(ctx.INT().toString().toInt()))
     }
 
     override fun visitErrorNode(node: ErrorNode?) {
         correct = false
     }
 
-    override fun toString(): String = if (!correct) "Incorrect" else setId ?: valuesStack.pop().getValue().toString()
+    override fun toString(): String {
+        return setId ?: getValStackValueStr()
+    }
+
+    private fun getValStackValueStr(): String {
+        return valStack.pop().getValue().toString()
+    }
+
+    private fun getValStackValue(): Int {
+        return valStack.pop().getValue()
+    }
 
 }

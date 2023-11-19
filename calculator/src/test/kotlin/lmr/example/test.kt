@@ -1,7 +1,12 @@
 package lmr.example
 
+import CalcgramLexer
+import org.antlr.v4.runtime.CharStreams
+import org.antlr.v4.runtime.CommonTokenStream
+import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 internal class Test {
 
@@ -54,4 +59,5 @@ internal class Test {
         assertEquals("a=5;", parser.parse("a=5;"))
         assertEquals("a+2=7;", parser.parse("a+2;"))
     }
+
 }
