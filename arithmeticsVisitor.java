@@ -1,4 +1,7 @@
-// Generated from calculator/src/main/antlr/lmr/example/arithmetics.g4 by ANTLR 4.13.1
+// Generated from calculator/src/main/antlr/org/example/arithmetics.g4 by ANTLR 4.13.1
+
+    package org.example;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

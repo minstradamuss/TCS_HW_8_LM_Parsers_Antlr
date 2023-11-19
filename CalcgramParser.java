@@ -1,7 +1,4 @@
-// Generated from calculator/src/main/antlr/org/example/arithmetics.g4 by ANTLR 4.13.1
-
-    package org.example;
-
+// Generated from calculator/src/main/antlr/org/example/Calcgram.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -12,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class arithmeticsParser extends Parser {
+public class CalcgramParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -75,7 +72,7 @@ public class arithmeticsParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "arithmetics.g4"; }
+	public String getGrammarFileName() { return "Calcgram.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -86,7 +83,7 @@ public class arithmeticsParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public arithmeticsParser(TokenStream input) {
+	public CalcgramParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -96,7 +93,7 @@ public class arithmeticsParser extends Parser {
 		public AContext a() {
 			return getRuleContext(AContext.class,0);
 		}
-		public TerminalNode EQQ() { return getToken(arithmeticsParser.EQQ, 0); }
+		public TerminalNode EQQ() { return getToken(CalcgramParser.EQQ, 0); }
 		public EContext e() {
 			return getRuleContext(EContext.class,0);
 		}
@@ -106,15 +103,15 @@ public class arithmeticsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_s; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).enterS(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).enterS(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).exitS(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).exitS(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof arithmeticsVisitor ) return ((arithmeticsVisitor<? extends T>)visitor).visitS(this);
+			if ( visitor instanceof CalcgramVisitor ) return ((CalcgramVisitor<? extends T>)visitor).visitS(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -166,14 +163,14 @@ public class arithmeticsParser extends Parser {
 		public IntContext int_() {
 			return getRuleContext(IntContext.class,0);
 		}
-		public TerminalNode OPEN() { return getToken(arithmeticsParser.OPEN, 0); }
+		public TerminalNode OPEN() { return getToken(CalcgramParser.OPEN, 0); }
 		public List<EContext> e() {
 			return getRuleContexts(EContext.class);
 		}
 		public EContext e(int i) {
 			return getRuleContext(EContext.class,i);
 		}
-		public TerminalNode CLOSE() { return getToken(arithmeticsParser.CLOSE, 0); }
+		public TerminalNode CLOSE() { return getToken(CalcgramParser.CLOSE, 0); }
 		public OperationContext operation() {
 			return getRuleContext(OperationContext.class,0);
 		}
@@ -183,15 +180,15 @@ public class arithmeticsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_e; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).enterE(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).enterE(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).exitE(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).exitE(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof arithmeticsVisitor ) return ((arithmeticsVisitor<? extends T>)visitor).visitE(this);
+			if ( visitor instanceof CalcgramVisitor ) return ((CalcgramVisitor<? extends T>)visitor).visitE(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -280,7 +277,7 @@ public class arithmeticsParser extends Parser {
 		public IdContext id() {
 			return getRuleContext(IdContext.class,0);
 		}
-		public TerminalNode EQUAL() { return getToken(arithmeticsParser.EQUAL, 0); }
+		public TerminalNode EQUAL() { return getToken(CalcgramParser.EQUAL, 0); }
 		public EContext e() {
 			return getRuleContext(EContext.class,0);
 		}
@@ -290,15 +287,15 @@ public class arithmeticsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_a; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).enterA(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).enterA(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).exitA(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).exitA(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof arithmeticsVisitor ) return ((arithmeticsVisitor<? extends T>)visitor).visitA(this);
+			if ( visitor instanceof CalcgramVisitor ) return ((CalcgramVisitor<? extends T>)visitor).visitA(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -332,22 +329,22 @@ public class arithmeticsParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class OperationContext extends ParserRuleContext {
-		public TerminalNode OPERATION() { return getToken(arithmeticsParser.OPERATION, 0); }
+		public TerminalNode OPERATION() { return getToken(CalcgramParser.OPERATION, 0); }
 		public OperationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_operation; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).enterOperation(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).enterOperation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).exitOperation(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).exitOperation(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof arithmeticsVisitor ) return ((arithmeticsVisitor<? extends T>)visitor).visitOperation(this);
+			if ( visitor instanceof CalcgramVisitor ) return ((CalcgramVisitor<? extends T>)visitor).visitOperation(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -375,22 +372,22 @@ public class arithmeticsParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IdContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(arithmeticsParser.ID, 0); }
+		public TerminalNode ID() { return getToken(CalcgramParser.ID, 0); }
 		public IdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_id; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).enterId(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).enterId(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).exitId(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).exitId(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof arithmeticsVisitor ) return ((arithmeticsVisitor<? extends T>)visitor).visitId(this);
+			if ( visitor instanceof CalcgramVisitor ) return ((CalcgramVisitor<? extends T>)visitor).visitId(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -418,22 +415,22 @@ public class arithmeticsParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IntContext extends ParserRuleContext {
-		public TerminalNode INT() { return getToken(arithmeticsParser.INT, 0); }
+		public TerminalNode INT() { return getToken(CalcgramParser.INT, 0); }
 		public IntContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_int; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).enterInt(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).enterInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof arithmeticsListener ) ((arithmeticsListener)listener).exitInt(this);
+			if ( listener instanceof CalcgramListener ) ((CalcgramListener)listener).exitInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof arithmeticsVisitor ) return ((arithmeticsVisitor<? extends T>)visitor).visitInt(this);
+			if ( visitor instanceof CalcgramVisitor ) return ((CalcgramVisitor<? extends T>)visitor).visitInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}

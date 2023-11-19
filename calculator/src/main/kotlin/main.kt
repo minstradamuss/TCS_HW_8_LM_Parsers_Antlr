@@ -1,3 +1,3 @@
-import lmr.example.MyArithmeticsParser
+import lmr.example.CalcgramParser
 
-fun main() { println(MyArithmeticsParser().parse(readln())) }
+fun main() { println(CalcgramParser().parse(readln())) }

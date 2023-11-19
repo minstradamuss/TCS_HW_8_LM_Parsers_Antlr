@@ -1,4 +1,4 @@
-grammar arithmetics;
+grammar Calcgram;
 
 s:
     (a EQQ | e EQQ);

@@ -1,11 +1,8 @@
-// Generated from calculator/src/main/antlr/org/example/arithmetics.g4 by ANTLR 4.13.1
-
-    package org.example;
-
+// Generated from calculator/src/main/antlr/org/example/Calcgram.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
- * This class provides an empty implementation of {@link arithmeticsVisitor},
+ * This class provides an empty implementation of {@link CalcgramVisitor},
  * which can be extended to create a visitor which only needs to handle a subset
  * of the available methods.
  *
@@ -13,47 +10,47 @@ import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
  * operations with no return type.
  */
 @SuppressWarnings("CheckReturnValue")
-public class arithmeticsBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements arithmeticsVisitor<T> {
+public class CalcgramBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements CalcgramVisitor<T> {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitS(arithmeticsParser.SContext ctx) { return visitChildren(ctx); }
+	@Override public T visitS(CalcgramParser.SContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitE(arithmeticsParser.EContext ctx) { return visitChildren(ctx); }
+	@Override public T visitE(CalcgramParser.EContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitA(arithmeticsParser.AContext ctx) { return visitChildren(ctx); }
+	@Override public T visitA(CalcgramParser.AContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitOperation(arithmeticsParser.OperationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitOperation(CalcgramParser.OperationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitId(arithmeticsParser.IdContext ctx) { return visitChildren(ctx); }
+	@Override public T visitId(CalcgramParser.IdContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitInt(arithmeticsParser.IntContext ctx) { return visitChildren(ctx); }
+	@Override public T visitInt(CalcgramParser.IntContext ctx) { return visitChildren(ctx); }
 }

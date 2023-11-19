@@ -1,91 +1,88 @@
-// Generated from calculator/src/main/antlr/org/example/arithmetics.g4 by ANTLR 4.13.1
-
-    package org.example;
-
+// Generated from calculator/src/main/antlr/org/example/Calcgram.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link arithmeticsListener},
+ * This class provides an empty implementation of {@link CalcgramListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
 @SuppressWarnings("CheckReturnValue")
-public class arithmeticsBaseListener implements arithmeticsListener {
+public class CalcgramBaseListener implements CalcgramListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterS(arithmeticsParser.SContext ctx) { }
+	@Override public void enterS(CalcgramParser.SContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitS(arithmeticsParser.SContext ctx) { }
+	@Override public void exitS(CalcgramParser.SContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterE(arithmeticsParser.EContext ctx) { }
+	@Override public void enterE(CalcgramParser.EContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitE(arithmeticsParser.EContext ctx) { }
+	@Override public void exitE(CalcgramParser.EContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterA(arithmeticsParser.AContext ctx) { }
+	@Override public void enterA(CalcgramParser.AContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitA(arithmeticsParser.AContext ctx) { }
+	@Override public void exitA(CalcgramParser.AContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperation(arithmeticsParser.OperationContext ctx) { }
+	@Override public void enterOperation(CalcgramParser.OperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperation(arithmeticsParser.OperationContext ctx) { }
+	@Override public void exitOperation(CalcgramParser.OperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(arithmeticsParser.IdContext ctx) { }
+	@Override public void enterId(CalcgramParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(arithmeticsParser.IdContext ctx) { }
+	@Override public void exitId(CalcgramParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInt(arithmeticsParser.IntContext ctx) { }
+	@Override public void enterInt(CalcgramParser.IntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInt(arithmeticsParser.IntContext ctx) { }
+	@Override public void exitInt(CalcgramParser.IntContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
